@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  /* --color-primary: #f4f5fe;
+  --color-white: #fff;
+  --color-text: #15111e;
+  --secondary-color: #ff7956;
+  --color-grise: #d9d9d9;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --box-shadow-base: 4px 4px 50px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  --color-background: ; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  height: 100vh;
+  font-family: "Inria Sans", sans-serif;
+  font-size: 62.5%;
+  background: #272727;
+  color:#15111e;
+  user-select: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  line-height: 1;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+
+footer {
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 1rem;
+  text-align: right;
+  padding: 1rem;
+  color: #fff;
+}
