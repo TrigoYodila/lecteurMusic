@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  gap: 1rem;
+  grid-template-columns: 15rem auto 16rem;
+}
+
+a {
+  color: var(--color-text);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+.profile-photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}

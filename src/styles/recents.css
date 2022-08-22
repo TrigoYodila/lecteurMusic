@@ -1,0 +1,115 @@
+:root {
+  --color-primary: #f4f5fe;
+  --color-white: #fff;
+  --color-text: #15111e;
+  --color-light: rgba(132, 139, 200, 0.1);
+  --secondary-color: #ff7956;
+  --color-grise: #d9d9d9;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --box-shadow-base: 4px 4px 50px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  --color-background: ;
+}
+
+.recents-card {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.recent-item {
+  width: 14rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: var(--box-shadow-base);
+}
+
+.recent-item:hover {
+  background:var(--color-text);
+  box-shadow:none;
+  color: white !important;
+  transition: all 1s ease-in-out;
+}
+
+.recent-item:hover .name-track
+ {
+  color: white;
+}
+
+.recent-item:hover .title-track{
+  color: white;
+}
+
+.recent-item img {
+  width: 11rem;
+  height: 11rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.item-user {
+  display: flex;
+  flex-direction: column;
+}
+.title-track,
+.name-track {
+  color: var(--color-text);
+}
+
+.title-track {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  margin-bottom: 0.8rem;
+}
+
+.track-name-title {
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.name-track {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.recent-item:hover .arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: .8rem solid transparent;
+  border-bottom: .8rem solid transparent;
+  border-left: .8rem solid var(--color-text);
+  margin: auto;
+  margin-top: .8rem;
+  margin-left: 1.2rem;
+}
+
+.recent-item:hover .play {
+  position: absolute;
+  bottom: 5rem;
+  right: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  color: var(--color-text);
+  text-align: center;
+  /* padding: 0.5rem; */
+  transform: translateY(-1rem);
+  transition: all .2s ease-in-out;
+}
+
+.play {
+  text-align: center;
+  position: absolute;
+  /* left: 5.5rem; */
+  bottom: 5rem;
+  right: 0.8rem;
+  width: 3rem;  
+  height: 3rem;
+}
+
+.play span {
+  font-size: 2rem;
+}

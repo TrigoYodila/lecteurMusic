@@ -1,0 +1,60 @@
+:root {
+  --color-primary: #f4f5fe;
+  --color-white: #fff;
+  --color-text: #15111e;
+  --color-light: rgba(132, 139, 200, 0.1);
+  --secondary-color: #ff7956;
+  --color-grise: #d9d9d9;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --box-shadow-base: 4px 4px 50px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  --color-background: ;
+}
+
+.right .top {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top .theme-toggler {
+  background: var(--color-grise);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.2rem;
+  width: 5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  /* padding: 0 .5rem; */
+}
+
+.right .theme-toggler span {
+  font-size: 1.5rem;
+}
+
+.right .theme-toggler span.active {
+  background: var(--secondary-color);
+  color: white;
+  border-radius: 0.5rem;
+  width: 50%;
+  text-align: center;
+  height: 2.2rem;
+}
+
+.right .top .profile {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  text-align: right;
+}
+
+.info p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.profile-photo {
+  cursor: pointer;
+}

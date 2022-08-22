@@ -31,11 +31,11 @@ body {
   height: 100vh;
   font-family: "Inria Sans", sans-serif;
   font-size: 62.5%;
-  background: #272727;
+  background: #f4f5fe;
   color:#15111e;
   user-select: none;
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   line-height: 1;
 }
 
