@@ -11,6 +11,20 @@
   --color-background: ;
 }
 
+.title-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.voir-plus{
+font-size: 1.2rem;
+font-weight: 400;
+margin-right: 1.2rem;
+color: var(--secondary-color);
+cursor: pointer;
+}
+
 .recents-card {
   margin-top: 1.5rem;
   display: grid;
@@ -108,6 +122,7 @@
   right: 0.8rem;
   width: 3rem;  
   height: 3rem;
+  
 }
 
 .play span {

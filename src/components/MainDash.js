@@ -7,6 +7,9 @@ import SearchSongs from "./SearchSongs";
 export default function MainDash() {
   const [change, setChange] = useState(false);
   const [search, setSearch] = useState([]);
+
+
+  // console.log(uritrack);
   
   return (
     <div>

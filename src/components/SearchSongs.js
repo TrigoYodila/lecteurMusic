@@ -1,9 +1,11 @@
-
+import { DashContext } from './DashboardUseContext';
 import '../styles/recents.css';
+import { useContext } from 'react';
 
 export default function SearchSongs({search}){
 
-   
+  
+   const { trackuri, setTrackuri } = useContext(DashContext)
 
 
     return (
@@ -18,7 +20,7 @@ export default function SearchSongs({search}){
                   <div className="title-track">{item.name}</div>
                   <div className="name-track">{item.artists[0].name}</div>
                 </div>
-                <div className="play">
+                <div className="play" onClick={() => setTrackuri(item.uri)}>
                   <div className="arrow-right"></div>
                 </div>
               </div>

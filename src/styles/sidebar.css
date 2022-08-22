@@ -10,11 +10,13 @@
   --color-background: ;
 }
 .slide-group {
+  overflow: hidden;
   width: 100%;
   height: 100%;
   background-color: #fff;
 }
 aside {
+  width: 100%;
   background: #fff;
   width: 100%;
   height: 100%;
