@@ -53,7 +53,7 @@ export default function Playlist({
               <img src={item.images[0].url} />
               <div className="track-name-title">
                 <div className="name-track" style={{ marginBottom: "0.5rem" }}>
-                  {playlist[0].name === undefined ? "ICI" : playlist[0].name}
+                  {item.name === undefined ? "ICI" : item.name}
                 </div>
                 <div className="title-track">Par {userid.name}</div>
               </div>

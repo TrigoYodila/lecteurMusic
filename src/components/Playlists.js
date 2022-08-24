@@ -8,6 +8,7 @@ import DashSearch from "./DashSearch";
 import SearchSongs from "./SearchSongs";
 import "../styles/dashboard.css";
 import "../styles/pageartiste.css";
+import "../styles/playlists.css";
 import SpotifyPlayer from "react-spotify-web-playback";
 import Playlist from "./Playlist";
 import TrackPlaylist from "./TrackPlaylist";
@@ -68,7 +69,7 @@ export default function Playlists() {
             ) : (
               <TrackPlaylist
                 clickedplay={clickedplay}
-                setClickedplay={setClickedplay}
+                setClickedplay={setClickedplay} playlistid={playlistid}
               />
             )}
           </div>

@@ -8,14 +8,13 @@ import "../styles/trackplaylist.css";
 
 const spotify = new SpotifyWebApi();
 
-export default function TrackPlaylist() {
+export default function TrackPlaylist({ playlistid }) {
   const { token } = useContext(globalData);
   const [playlisttrack, setPlaylistTrack] = useState([]);
-  const { userid, setUserid, playlistid, setPlaylistid } =
-    useContext(DashContext);
+  const { userid, setUserid, setPlaylistid } = useContext(DashContext);
 
   spotify.setAccessToken(token);
-
+  console.log("PLAYLIST ID", playlistid);
   useEffect(() => {
     setTimeout(() => {
       spotify
@@ -28,31 +27,38 @@ export default function TrackPlaylist() {
           console.error(err);
         });
     }, 2000);
-  }, []);
+  }, [playlistid]);
 
   return (
-    <div container-play-track>
+    <div className="container-play-track">
       <div className="banniere-playlist">
         <div className="playlist">Playlist</div>
-        <div className="title-playlist"></div>
-        <div className="count-track"></div>
+        <div className="title-playlist">Titre Playlist</div>
+        <div className="titre-count">
+          <div className="count-track">{playlisttrack.length} Titres</div>
+          <div className="name-user">Par {userid.name}</div>
+        </div>
       </div>
       <div className="table-track">
         <div className="table-header">
           <h2>#</h2>
-          <h2>titre</h2>
+          <h2>Titre</h2>
           <h2>Durée</h2>
           <h2>Album</h2>
         </div>
-        <div className="table-contain">
-          <h2>#</h2>
-          <div className="title-image">
-            <h2>titre</h2>
-            <img src="" />
-          </div>
-          <h2>Durée</h2>
-          <h2>Album</h2>
-        </div>
+        {playlisttrack.map((item, index) => {
+          return (
+            <div className="table-contain title">
+              <div>{index + 1}</div>
+              <div className="title-image">
+                <img src="" />
+                <div className="title">{item.track.name}</div>
+              </div>
+              <div className="title"></div>
+              <div className="title">{item.track.album.name}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
