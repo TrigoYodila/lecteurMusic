@@ -18,29 +18,31 @@ export default function NewsReleases() {
    useEffect(() => {
      setTimeout(() => {
        clicked
-         ? spotify.getNewReleases({ limit: 4 }, function (err, data) {
-             if (err) console.error(err);
-             else {
+         ? spotify
+             .getNewReleases({ limit: 4 })
+             .then((data) => {
                //  console.log("RELEASE", data.albums.items[0].name);
                setReleases(data.albums.items);
-             }
-           })
-         : spotify.getNewReleases( function (err, data) {
-             if (err) console.error(err);
-             else {
+             })
+             .catch((err) => {
+               console.error(err);
+             })
+         : spotify
+             .getNewReleases()
+             .then((data) => {
                //  console.log("RELEASE", data.albums.items[0].name);
                setReleases(data.albums.items);
-             }
-           });
+             })
+             .catch((err) => {
+               console.error(err);
+             }); 
      }, 1000);
    }, [clicked]);
   //  console.log("new releases", releases)
 
-
    function handleClicked() {
      setClicked(!clicked);
    }
-
 
   return (
     <div>

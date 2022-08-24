@@ -2,16 +2,18 @@ import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
-import SearchSongs from "./SearchSongs";
+import PageArtiste from "./PageArtiste";
+import Playlists from "./Playlists";
+
 
 export default function AppRouter() {
-
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        {/* <Route path="searchsongs" element={<SearchSongs />} /> */}
+        <Route exec path="/" element={<Home />} />
+        <Route exec path="dashboard" element={<Dashboard />} />
+        <Route exec path="pageartiste" element={<PageArtiste />} />
+        <Route exec path="playlists" element={<Playlists />} />
       </Routes>
     </div>
   );

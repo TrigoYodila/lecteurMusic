@@ -3,23 +3,21 @@ import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import { globalData } from "./userContext";
+import { FaUser } from "react-icons/fa";
+
 
 const spotify = new SpotifyWebApi();
 
 export default function ProfileTop() {
-  
   const { token } = useContext(globalData);
-  
-  console.log("token profile", token)
-  const [user, setUser] = useState({})
-  
+
+  console.log("token profile", token);
+  const [user, setUser] = useState({});
 
   spotify.setAccessToken(token);
-  
 
   useEffect(() => {
     setTimeout(() => {
-     
       spotify
         .getMe()
         .then((data) => {
@@ -33,17 +31,10 @@ export default function ProfileTop() {
         .catch((error) => {
           console.log(error);
         });
-
-       
-
     }, 2000);
   }, []);
 
-   console.log(user);
-
-
-
-
+  console.log(user);
 
   return (
     <div className="top">
@@ -60,7 +51,7 @@ export default function ProfileTop() {
           <p>{user.name}</p>
         </div>
         <div className="profile-photo">
-          <img src={user.image}/>
+          <img src={user.image} />
         </div>
       </div>
     </div>

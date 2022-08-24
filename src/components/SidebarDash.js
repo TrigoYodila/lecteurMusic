@@ -3,9 +3,16 @@ import { MdHomeFilled, MdAlbum, MdAddBox } from "react-icons/md";
 import { RiPlayListFill } from "react-icons/ri";
 import { IoMdHeart } from "react-icons/io";
 import { BsPersonFill } from "react-icons/bs";
-<bs></bs>;
+import {RiLogoutCircleRFill} from 'react-icons/ri'
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SidebarDash() {
+  let navigate = useNavigate();
+
+  const handleChange = (e) => {
+    navigate("pageartiste", { replace: true })
+  };
+
   return (
     <div className="slide-group">
       <aside>
@@ -19,35 +26,29 @@ export default function SidebarDash() {
         </div>
 
         <div className="sidebar">
-          <a href="">
+          <Link to="/dashboard">
             <span className="material-icons-sharp">
               <MdHomeFilled />
             </span>
             <h3>Home</h3>
-          </a>
-          <a href="">
-            <span className="material-icons-sharp">
-              <BsPersonFill />
-            </span>
-            <h3>Artists</h3>
-          </a>
-          <a href="">
-            <span className="material-icons-sharp">
-              <MdAlbum />
-            </span>
-            <h3>Albums</h3>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/playlists">
             <span className="material-icons-sharp">
               <RiPlayListFill />
             </span>
             <h3>Playlist</h3>
-          </a>
+          </Link>
           <a href="">
             <span className="material-icons-sharp">
               <MdAddBox />
             </span>
             <h3>Créer playlist</h3>
+          </a>
+          <a href="">
+            <span className="material-icons-sharp">
+              <RiLogoutCircleRFill />
+            </span>
+            <h3 className="connect">Se deconnecter</h3>
           </a>
         </div>
       </aside>

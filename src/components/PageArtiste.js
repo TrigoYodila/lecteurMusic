@@ -3,21 +3,27 @@ import SpotifyWebApi from "spotify-web-api-js";
 import { globalData } from "./userContext";
 import { DashContext } from "./DashboardUseContext";
 import ProfileDash from "./ProfileDash";
-import MainDash from "./MainDash";
 import SidebarDash from "./SidebarDash";
+import DashSearch from "./DashSearch";
+import SearchSongs from "./SearchSongs";
 import "../styles/dashboard.css";
+import "../styles/pageartiste.css";
 import SpotifyPlayer from "react-spotify-web-playback";
+import TopArtist from "./TopArtist";
 
-export default function Dashboard() {
+export default function PageArtiste() {
+
   const spotify = new SpotifyWebApi();
   const { token } = useContext(globalData);
-  
-  const [trackuri,setTrackuri] = useState("");
-  const [userid,setUserId] = useState("");
-  const [artistid,setArtistid] = useState("");
 
-  console.log("Artiste id", artistid);
-  
+  const [trackuri, setTrackuri] = useState("");
+  const [userid, setUserId] = useState("");
+  const [artistid, setArtistid] = useState("");
+  const [change, setChange] = useState(false);
+  const [search, setSearch] = useState([]);
+
+  console.log("Track uri", trackuri);
+
   spotify.setAccessToken(token);
 
   useEffect(() => {
@@ -25,7 +31,7 @@ export default function Dashboard() {
       spotify
         .getMe()
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setUserId(data.id);
         })
         .catch((error) => {
@@ -33,13 +39,18 @@ export default function Dashboard() {
         });
     }, 2000);
   }, []);
-  
+
   return (
     <div>
       <div className="container">
-        <DashContext.Provider value={{ trackuri, setTrackuri,userid,setUserId,setArtistid,artistid }}>
+        <DashContext.Provider
+          value={{ trackuri, setTrackuri, userid, setUserId,artistid,setArtistid }}
+        >
           <SidebarDash />
-          <MainDash />
+          <div className="container-dash">
+            <DashSearch setChange={setChange} setSearch={setSearch} />
+            {change ? <SearchSongs search={search} /> : <TopArtist artistid={artistid}/>}
+          </div>
           <ProfileDash />
         </DashContext.Provider>
       </div>
@@ -61,4 +72,3 @@ export default function Dashboard() {
     </div>
   );
 }
-

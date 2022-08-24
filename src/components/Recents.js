@@ -24,9 +24,9 @@ export default function Recents() {
   useEffect(() => {
     setTimeout(() => {
       clicked
-        ? spotify.getMyRecentlyPlayedTracks({ limit: 4 }, function (err, data) {
-            if (err) console.error(err);
-            else {
+        ? spotify
+            .getMyRecentlyPlayedTracks({ limit: 4 })
+            .then((data) => {
               console.log(data.items);
               setRecents(data.items);
               console.log("Artist albums", data.items[0].track.artists[0].name);
@@ -36,11 +36,13 @@ export default function Recents() {
                 "url image ",
                 data.items[0].track.album.images[0].url
               );
-            }
-          })
-        : spotify.getMyRecentlyPlayedTracks(function (err, data) {
-            if (err) console.error(err);
-            else {
+            })
+            .catch((err) => {
+              console.log(err);
+            })
+        : spotify
+            .getMyRecentlyPlayedTracks()
+            .then((data) => {
               console.log(data.items);
               setRecents(data.items);
               console.log("Artist albums", data.items[0].track.artists[0].name);
@@ -50,8 +52,10 @@ export default function Recents() {
                 "url image ",
                 data.items[0].track.album.images[0].url
               );
-            }
-          });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
     }, 1000);
   }, [clicked]);
 

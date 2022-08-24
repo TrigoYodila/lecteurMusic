@@ -17,6 +17,7 @@ export default function DashSearch({ setChange, setSearch}) {
         console.log("RECHERCHE", data);
          console.log("RECHERCHE", data.tracks.items);
         setSearch(data.tracks.items)
+        console.log("BONJOUR MAMAN")
       }
     });
 
@@ -29,14 +30,6 @@ export default function DashSearch({ setChange, setSearch}) {
 
   return (
     <div className="search-header">
-      {/* <div className="arrow">
-        <span>
-          <BsArrowLeft />
-        </span>
-        <span>
-          <BsArrowRight />
-        </span>
-      </div> */}
       <div className="input">
         <span>
           <FiSearch />
