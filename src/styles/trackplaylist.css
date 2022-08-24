@@ -61,32 +61,38 @@
   font-size: 1.2rem;
 }
 
-.table-contain {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 0.8rem;
+.table {
+  width: 100%;
+  color: rgba(21, 17, 30, 0.7);
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  border-collapse: collapse;
+}
+
+.table th,
+tbody td {
+  padding: 1.5rem;
+
+  text-align: left;
+}
+
+tr {
   border-bottom: 0.01rem solid rgba(21, 17, 30, 0.7);
-  padding: 1rem 0;
-  margin-top: 0;
-  border:2px solid red;
 }
-
-.table-contain .title{
-     border:2px solid green;
-}
-
-.table-contain:hover {
+.table tbody tr:hover {
   background: #fff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
-.table-contain .title {
-  color: rgba(21, 17, 30, 0.7);
-  font-size: 1.2rem;
+.col-image {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-
-.title-image{
-    display: flex;
-    gap: .5rem;
+.title-image {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
 }

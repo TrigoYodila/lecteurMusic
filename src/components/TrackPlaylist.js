@@ -40,25 +40,31 @@ export default function TrackPlaylist({ playlistid }) {
         </div>
       </div>
       <div className="table-track">
-        <div className="table-header">
-          <h2>#</h2>
-          <h2>Titre</h2>
-          <h2>Durée</h2>
-          <h2>Album</h2>
-        </div>
-        {playlisttrack.map((item, index) => {
-          return (
-            <div className="table-contain title">
-              <div>{index + 1}</div>
-              <div className="title-image">
-                <img src="" />
-                <div className="title">{item.track.name}</div>
-              </div>
-              <div className="title"></div>
-              <div className="title">{item.track.album.name}</div>
-            </div>
-          );
-        })}
+        <table className="table">
+          <thead>
+            <tr>
+              <th className="col">#</th>
+              <th className="col">Titre</th>
+              <th>Artiste</th>
+              <th className="col">Album</th>
+            </tr>
+          </thead>
+          {playlisttrack.map((item, index) => {
+            return (
+              <tbody>
+                <tr>
+                  <th className="col">{index + 1}</th>
+                  <td className="col-image">
+                    <img src={item.track.album.images[0].url} className="title-image"/>
+                    {item.track.name}
+                  </td>
+                  <td>{item.track.artists[0].name}</td>
+                  <td className="col">{item.track.album.name}</td>
+                </tr>
+              </tbody>
+            );
+          })}
+        </table>
       </div>
     </div>
   );
