@@ -8,7 +8,7 @@ import "../styles/trackplaylist.css";
 
 const spotify = new SpotifyWebApi();
 
-export default function TrackPlaylist({ playlistid }) {
+export default function TrackPlaylist({ playlistid,playlist,playlistname}) {
   const { token } = useContext(globalData);
   const [playlisttrack, setPlaylistTrack] = useState([]);
   const { userid, setUserid, setPlaylistid } = useContext(DashContext);
@@ -28,12 +28,12 @@ export default function TrackPlaylist({ playlistid }) {
         });
     }, 2000);
   }, [playlistid]);
-
+  console.log("PlaylistName",playlistname)
   return (
     <div className="container-play-track">
       <div className="banniere-playlist">
         <div className="playlist">Playlist</div>
-        <div className="title-playlist">Titre Playlist</div>
+        <div className="title-playlist">{playlistname}</div>
         <div className="titre-count">
           <div className="count-track">{playlisttrack.length} Titres</div>
           <div className="name-user">Par {userid.name}</div>

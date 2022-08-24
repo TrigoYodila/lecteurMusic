@@ -14,7 +14,7 @@ export default function Playlist({
 }) {
   const { token } = useContext(globalData);
   const [playlist, setPlaylist] = useState([]);
-  const { userid, setUserid } = useContext(DashContext);
+  const { userid, setUserid,setPlaylistname } = useContext(DashContext);
 
   spotify.setAccessToken(token);
   console.log("JE SUIS USER", userid.id);
@@ -38,6 +38,7 @@ export default function Playlist({
     setClickedplay(false);
     // console.log("BONKOUR")
     setPlaylistid(item.id);
+    setPlaylistname(item.name)
   }
   // console.log("clicked", clickedplay);
   console.log("Mes playlist", userid.id);

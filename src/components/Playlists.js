@@ -18,6 +18,7 @@ export default function Playlists() {
   const { token } = useContext(globalData);
 
   const [playlistid, setPlaylistid] = useState("");
+  const [playlistname,setPlaylistname] = useState("")
   const [userid, setUserId] = useState({
     name:"",
     id:""
@@ -26,6 +27,7 @@ export default function Playlists() {
   const [change, setChange] = useState(false);
   const [search, setSearch] = useState([]);
   const [clickedplay, setClickedplay] = useState(true);
+  const [playlist, setPlaylist] = useState([]);
   
   console.log(clickedplay);
   spotify.setAccessToken(token);
@@ -57,6 +59,9 @@ export default function Playlists() {
             artistid,
             userid,
             setArtistid,
+            playlist,
+            setPlaylist,
+            setPlaylistname,
           }}
         >
           <SidebarDash />
@@ -65,11 +70,18 @@ export default function Playlists() {
             {change ? (
               <SearchSongs search={search} />
             ) : clickedplay ? (
-              <Playlist playlistid={Playlist} setPlaylistid={setPlaylistid} setClickedplay={setClickedplay}/>
+              <Playlist
+                playlistid={Playlist}
+                setPlaylistid={setPlaylistid}
+                setClickedplay={setClickedplay}
+              />
             ) : (
               <TrackPlaylist
                 clickedplay={clickedplay}
-                setClickedplay={setClickedplay} playlistid={playlistid}
+                setClickedplay={setClickedplay}
+                playlistid={playlistid}
+                playlist={playlist}
+                playlistname={playlistname}
               />
             )}
           </div>
