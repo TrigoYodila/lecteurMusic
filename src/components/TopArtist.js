@@ -18,7 +18,6 @@ export default function TopArtist({artistid}) {
   console.log("My Artist", artistid)
 
   useEffect(() => {
-    setTimeout(() => {
       spotify.getArtistAlbums(artistid).then((data)=>{
         console.log("Album Artist", data);
           console.log("TATAT")
@@ -26,7 +25,7 @@ export default function TopArtist({artistid}) {
       }).catch((err)=>{
         console.error(err)
       })
-    }, 2000);
+  
   }, [artistid]);
 
   return (

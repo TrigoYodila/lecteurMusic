@@ -12,15 +12,15 @@ export default function MainDash() {
   // console.log(uritrack);
 
   return (
-    <div className="container-dash">
+    <div>
       <DashSearch setChange={setChange} setSearch={setSearch} />
       {change ? (
         <SearchSongs search={search} />
       ) : (
-        <>
+        <div>
           {" "}
           <Recents /> <NewsReleases />{" "}
-        </>
+        </div>
       )}
     </div>
   );

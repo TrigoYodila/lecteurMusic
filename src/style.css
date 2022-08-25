@@ -8,9 +8,10 @@
   --color-grise: #d9d9d9;
   --box-shadow: 0 2rem 3rem var(--color-light);
   --box-shadow-base: 4px 4px 50px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  --color-background: ; */
+  border-radius: 10px; 
+  --color-background: ;  */
 }
+
 
 * {
   margin: 0;

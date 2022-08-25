@@ -76,7 +76,7 @@ aside h3 {
 aside .sidebar a {
   display: flex;
   color: var(--color-text);
-  margin-left: 0.6rem;
+  margin-left: 0.2rem;
   gap: 1rem;
   align-items: center;
   position: relative;
@@ -85,10 +85,10 @@ aside .sidebar a {
 }
 
 aside .sidebar a:hover::before{
-  content: "";
+  /* content: "";
   width: .7rem;
   height: 100%;
-  background:var(--secondary-color);
+  background:var(--secondary-color); */
 }
 aside .sidebar a span {
   font-size: 2rem;
@@ -99,26 +99,42 @@ aside .sidebar a:last-child {
   position: absolute;
   background:var(--secondary-color);
   border-radius: 1rem;
+  padding: .5rem;
   bottom: 5rem;
-  width: 80%;
+  width: 90%;
+}
+aside .sidebar a:last-child:hover{
+  color: var(--color-white);
 }
 
 .connect{
   font-size: 1rem;
 }
 
-aside .sidebar a.active span {
+/* aside .sidebar a.active span {
   color: var(--color-white);
-}
+} */
 
 aside .sidebar a:hover {
-  background: var(--color-text);
-  color: var(--color-white);
-  margin-left: 0;
+  /* background: var(--color-text);*/
+  color: var(--secondary-color);
+  /*margin-left: 0; */
 }
 
-aside .sidebar a:hover span {
+/* aside .sidebar a:hover span {
   margin-left: .5rem;
+} */
+
+.active{
+   background: var(--color-text);
+   color: var(--color-white)!important;
+   margin-left: 0;
 }
 
+.active::before{
+   content: "";
+  width: .7rem;
+  height: 100%;
+  background:var(--secondary-color);
+}
 

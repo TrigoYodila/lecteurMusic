@@ -16,7 +16,6 @@ export default function NewsReleases() {
   spotify.setAccessToken(token);
 
    useEffect(() => {
-     setTimeout(() => {
        clicked
          ? spotify
              .getNewReleases({ limit: 4 })
@@ -36,7 +35,6 @@ export default function NewsReleases() {
              .catch((err) => {
                console.error(err);
              }); 
-     }, 1000);
    }, [clicked]);
   //  console.log("new releases", releases)
 
@@ -49,7 +47,7 @@ export default function NewsReleases() {
       <div className="title-card">
         <h1 className="title">Nouveautés</h1>
         <span className="voir-plus" onClick={handleClicked}>
-          Voir plus...
+          {clicked ? "Voir plus" : "Voir moins"}
         </span>
       </div>
       <div className="recents-card">

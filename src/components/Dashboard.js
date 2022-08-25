@@ -31,15 +31,26 @@ export default function Dashboard() {
         .catch((error) => {
           console.log(error);
         });
-    }, 2000);
+    }, 1000);
   }, []);
   
   return (
     <div>
       <div className="container">
-        <DashContext.Provider value={{ trackuri, setTrackuri,userid,setUserId,setArtistid,artistid }}>
+        <DashContext.Provider
+          value={{
+            trackuri,
+            setTrackuri,
+            userid,
+            setUserId,
+            setArtistid,
+            artistid,
+          }}
+        >
           <SidebarDash />
-          <MainDash />
+          <div className="container-home">
+            <MainDash />
+          </div>
           <ProfileDash />
         </DashContext.Provider>
       </div>

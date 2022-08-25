@@ -52,7 +52,7 @@ function App() {
   }, []);
 
   return (
-    <globalData.Provider value={{ userAuth, scope, token }}>
+    <globalData.Provider value={{ userAuth, scope, token,setToken }}>
       <AppRouter />
     </globalData.Provider>
   );

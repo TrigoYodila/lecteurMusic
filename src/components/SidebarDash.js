@@ -5,13 +5,19 @@ import { IoMdHeart } from "react-icons/io";
 import { BsPersonFill } from "react-icons/bs";
 import {RiLogoutCircleRFill} from 'react-icons/ri'
 import { Link, useNavigate } from "react-router-dom";
+import { globalData } from "./userContext";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function SidebarDash() {
   let navigate = useNavigate();
+  const { token, setToken} = useContext(globalData);
 
   const handleChange = (e) => {
     navigate("pageartiste", { replace: true })
   };
+
+
 
   return (
     <div className="slide-group">
@@ -26,30 +32,30 @@ export default function SidebarDash() {
         </div>
 
         <div className="sidebar">
-          <Link to="/dashboard">
-            <span className="material-icons-sharp">
+          <NavLink to="/dashboard" activeClassName="active">
+            <span>
               <MdHomeFilled />
             </span>
             <h3>Home</h3>
-          </Link>
-          <Link to="/playlists">
-            <span className="material-icons-sharp">
+          </NavLink>
+          <NavLink to="/playlists" activeClassName="active">
+            <span>
               <RiPlayListFill />
             </span>
             <h3>Playlist</h3>
-          </Link>
+          </NavLink>
           <a href="">
-            <span className="material-icons-sharp">
+            <span>
               <MdAddBox />
             </span>
             <h3>Créer playlist</h3>
           </a>
-          <a href="">
-            <span className="material-icons-sharp">
+          <Link to="/">
+            <span>
               <RiLogoutCircleRFill />
             </span>
             <h3 className="connect">Se deconnecter</h3>
-          </a>
+          </Link>
         </div>
       </aside>
     </div>

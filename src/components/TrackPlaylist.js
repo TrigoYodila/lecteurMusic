@@ -8,15 +8,15 @@ import "../styles/trackplaylist.css";
 
 const spotify = new SpotifyWebApi();
 
-export default function TrackPlaylist({ playlistid,playlist,playlistname}) {
+export default function TrackPlaylist({ playlistid,playlist,playlistname,playlistimg}) {
   const { token } = useContext(globalData);
   const [playlisttrack, setPlaylistTrack] = useState([]);
-  const { userid, setUserid, setPlaylistid } = useContext(DashContext);
+  const { userid, setUserid, setPlaylistid,trackplaylisturi,setTrackplaylisturi} = useContext(DashContext);
+
 
   spotify.setAccessToken(token);
   console.log("PLAYLIST ID", playlistid);
   useEffect(() => {
-    setTimeout(() => {
       spotify
         .getPlaylistTracks(playlistid)
         .then((data) => {
@@ -26,12 +26,21 @@ export default function TrackPlaylist({ playlistid,playlist,playlistname}) {
         .catch((err) => {
           console.error(err);
         });
-    }, 2000);
   }, [playlistid]);
   console.log("PlaylistName",playlistname)
+  console.log("MON IMAGE",playlistimg)
+
+  function TakedtrackUri(item){
+    setTrackplaylisturi(item.track.uri)
+    console.log("voici mon uri", trackplaylisturi);
+  }
+  
   return (
     <div className="container-play-track">
       <div className="banniere-playlist">
+        <div className="image-bannere">
+          <img src={playlistimg} />
+        </div>
         <div className="playlist">Playlist</div>
         <div className="title-playlist">{playlistname}</div>
         <div className="titre-count">
@@ -52,10 +61,13 @@ export default function TrackPlaylist({ playlistid,playlist,playlistname}) {
           {playlisttrack.map((item, index) => {
             return (
               <tbody>
-                <tr>
+                <tr onClick={() => TakedtrackUri(item)}>
                   <th className="col">{index + 1}</th>
                   <td className="col-image">
-                    <img src={item.track.album.images[0].url} className="title-image"/>
+                    <img
+                      src={item.track.album.images[0].url}
+                      className="title-image"
+                    />
                     {item.track.name}
                   </td>
                   <td>{item.track.artists[0].name}</td>

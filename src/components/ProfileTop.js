@@ -17,7 +17,6 @@ export default function ProfileTop() {
   spotify.setAccessToken(token);
 
   useEffect(() => {
-    setTimeout(() => {
       spotify
         .getMe()
         .then((data) => {
@@ -31,7 +30,7 @@ export default function ProfileTop() {
         .catch((error) => {
           console.log(error);
         });
-    }, 2000);
+   
   }, []);
 
   console.log(user);

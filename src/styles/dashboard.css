@@ -7,6 +7,9 @@
   grid-template-columns: 15rem auto 16rem;
 }
 
+.container-home{
+  overflow: auto;
+}
 a {
   color: var(--color-text);
 }

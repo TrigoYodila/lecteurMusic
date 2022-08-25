@@ -22,7 +22,7 @@ export default function Recents() {
   spotify.setAccessToken(token);
 
   useEffect(() => {
-    setTimeout(() => {
+   
       clicked
         ? spotify
             .getMyRecentlyPlayedTracks({ limit: 4 })
@@ -56,7 +56,6 @@ export default function Recents() {
             .catch((err) => {
               console.log(err);
             });
-    }, 1000);
   }, [clicked]);
 
   console.log("externe", recents);
@@ -67,11 +66,11 @@ export default function Recents() {
 
   
   return (
-    <div style={style}>
+    <div style={style} className="container-recents">
       <div className="title-card">
         <h1 className="title">Ecoutés Récemment</h1>
         <span className="voir-plus" onClick={handleClicked}>
-          Voir plus...
+          {clicked ? "Voir plus" : "Voir moins"}
         </span>
       </div>
       <div className="recents-card">

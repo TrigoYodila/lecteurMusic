@@ -14,13 +14,14 @@ export default function Playlist({
 }) {
   const { token } = useContext(globalData);
   const [playlist, setPlaylist] = useState([]);
-  const { userid, setUserid,setPlaylistname } = useContext(DashContext);
+  const { userid, setUserid, setPlaylistname, setPlaylistimg } =
+    useContext(DashContext);
 
   spotify.setAccessToken(token);
   console.log("JE SUIS USER", userid.id);
 
   useEffect(() => {
-    setTimeout(() => {
+    
       spotify
         .getUserPlaylists()
         .then((data) => {
@@ -30,7 +31,7 @@ export default function Playlist({
         .catch((err) => {
           console.log(err);
         });
-    }, 2000);
+  
   }, []);
   //gérer changement icone play
 
@@ -39,6 +40,7 @@ export default function Playlist({
     // console.log("BONKOUR")
     setPlaylistid(item.id);
     setPlaylistname(item.name)
+    setPlaylistimg(item.images[0].url)
   }
   // console.log("clicked", clickedplay);
   console.log("Mes playlist", userid.id);

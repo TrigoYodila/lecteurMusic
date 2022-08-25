@@ -19,6 +19,7 @@ export default function Playlists() {
 
   const [playlistid, setPlaylistid] = useState("");
   const [playlistname,setPlaylistname] = useState("")
+  const [playlistimg,setPlaylistimg] = useState("")
   const [userid, setUserId] = useState({
     name:"",
     id:""
@@ -28,6 +29,7 @@ export default function Playlists() {
   const [search, setSearch] = useState([]);
   const [clickedplay, setClickedplay] = useState(true);
   const [playlist, setPlaylist] = useState([]);
+  const [trackplaylisturi, setTrackplaylisturi] = useState("");
   
   console.log(clickedplay);
   spotify.setAccessToken(token);
@@ -47,7 +49,7 @@ export default function Playlists() {
         .catch((error) => {
           console.log(error);
         });
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -62,6 +64,9 @@ export default function Playlists() {
             playlist,
             setPlaylist,
             setPlaylistname,
+            setPlaylistimg,
+            trackplaylisturi,
+            setTrackplaylisturi,
           }}
         >
           <SidebarDash />
@@ -82,6 +87,7 @@ export default function Playlists() {
                 playlistid={playlistid}
                 playlist={playlist}
                 playlistname={playlistname}
+                playlistimg={playlistimg}
               />
             )}
           </div>
@@ -100,7 +106,7 @@ export default function Playlists() {
             trackNameColor: "#fff",
           }}
           token={token}
-          uris=""
+          uris={trackplaylisturi}
         />
       </div>
     </div>
