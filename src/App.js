@@ -6,6 +6,8 @@ import "./style.css";
 
 const spotify = new SpotifyWebApi();
 
+//ac861758db1f4152aeee2f814db1a478 (local client) http://localhost:3000/dashboard
+//232d842a255c4fd3b756903ee946495d (inline client) https://bmusic.vercel.app/
 function App() {
   const userAuth = {
     CLIENT_ID: "232d842a255c4fd3b756903ee946495d",
@@ -31,7 +33,6 @@ function App() {
   ];
 
   const [token, setToken] = useState("");
- 
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -52,7 +53,7 @@ function App() {
   }, []);
 
   return (
-    <globalData.Provider value={{ userAuth, scope, token,setToken }}>
+    <globalData.Provider value={{ userAuth, scope, token, setToken }}>
       <AppRouter />
     </globalData.Provider>
   );

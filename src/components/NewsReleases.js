@@ -35,7 +35,7 @@ export default function NewsReleases() {
              .catch((err) => {
                console.error(err);
              }); 
-   }, [clicked]);
+   }, [clicked,token]);
   //  console.log("new releases", releases)
 
    function handleClicked() {
