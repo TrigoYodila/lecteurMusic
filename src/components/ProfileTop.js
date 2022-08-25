@@ -31,7 +31,7 @@ export default function ProfileTop() {
           console.log(error);
         });
    
-  }, []);
+  }, [token]);
 
   console.log(user);
 
