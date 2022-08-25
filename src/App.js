@@ -50,7 +50,7 @@ function App() {
     }
 
     setToken(token);
-  }, []);
+  }, [token]);
 
   return (
     <globalData.Provider value={{ userAuth, scope, token, setToken }}>
