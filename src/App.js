@@ -10,8 +10,8 @@ const spotify = new SpotifyWebApi();
 //232d842a255c4fd3b756903ee946495d (inline client) https://bmusic.vercel.app/
 function App() {
   const userAuth = {
-    CLIENT_ID: "232d842a255c4fd3b756903ee946495d",
-    REDIRECT_URI: "https://bmusic.vercel.app/dashboard",
+    CLIENT_ID: "ac861758db1f4152aeee2f814db1a478",
+    REDIRECT_URI: "http://localhost:3000/dashboard",
     AUTH_ENDPOINT: "https://accounts.spotify.com/authorize",
     RESPONSE_TYPE: "token",
   };
