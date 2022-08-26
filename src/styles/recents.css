@@ -19,22 +19,23 @@
   margin-bottom :2rem;
 }
 
-/* .voir-plus{
+.voir-plus{
 font-size: 1.1rem;
 font-weight: 900;
 margin-right: 1.5rem;
 padding: .5rem;
-color: var(--color-text);
-border-bottom: .2rem solid var(--secondary-color);
-border-left: .2rem solid var(--secondary-color);
+border-radius: .8rem;
 cursor: pointer;
-}
+background: var(--secondary-color);
+border: .2rem solid var(--secondary-color);
+color: var(--color-texte);
+} 
 .voir-plus:hover{
-  border-bottom: .2rem solid var(--color-text);
-  border-left: .2rem solid var(--color-text);
-  color: var(--secondary-color);
-  transition: all 1s ease-in-out;
-} */
+  border: .2rem solid var(--secondary-color);
+  color: var(--color-texte);
+  background: transparent;
+  
+} 
 
 .container-recents{
   margin-top: 2rem; /* Ajout */
@@ -62,7 +63,7 @@ cursor: pointer;
 
 .item-info{
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .recent-item:hover {
@@ -142,10 +143,10 @@ cursor: pointer;
 
 .play {
   text-align: center;
-  position: relative;
+  position: absolute;
   /* left: 5.5rem; */
-  bottom: 5rem;
-  right: 0.8rem;
+  bottom: 1rem;
+  right: 0rem;
   width: 3rem;  
   height: 3rem;
   
