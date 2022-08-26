@@ -11,15 +11,7 @@
 }
 
 .search-header {
-  /* margin-top: 1.4rem; */
-  /* display: flex;
-  align-items: center; */
-  /* position: sticky;
-  z-index: 1000;
-  top: 1rem;
-  left: 0; */
-  margin: 1.5rem 0 1.5rem 1rem;
-  
+  margin: 1.5rem 0 1.5rem 0; 
 }
 
 .arrow span,

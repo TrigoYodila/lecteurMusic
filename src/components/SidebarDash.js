@@ -21,43 +21,44 @@ export default function SidebarDash() {
 
   return (
     // <div className="slide-group"> </div>
-      <aside className="sidebar">
-        <div className="top">
-          <div className="logo">
-            <img src="./images/Head phone.png" />
-            <h2 className="logo-text">
-              &beta;<span className="danger">Music</span>
-            </h2>
-          </div>
+    <aside className="sidebar">
+      <div className="top">
+        <div className="logo">
+          <img src="./images/Head phone.png" />
         </div>
+        <div>
+          <h2 className="logo-text">
+            &beta;<span className="danger">Music</span>
+          </h2>
+        </div>
+      </div>
 
-        <div className="sidebar">
-          <NavLink to="/dashboard" activeClassName="active">
-            <span>
-              <MdHomeFilled />
-            </span>
-            <h3>Home</h3>
-          </NavLink>
-          <NavLink to="/playlists" activeClassName="active">
-            <span>
-              <RiPlayListFill />
-            </span>
-            <h3>Playlist</h3>
-          </NavLink>
-          <a href="">
-            <span>
-              <MdAddBox />
-            </span>
-            <h3>Créer playlist</h3>
-          </a>
-          <Link to="/">
-            <span>
-              <RiLogoutCircleRFill />
-            </span>
-            <h3 className="connect">Se deconnecter</h3>
-          </Link>
-        </div>
-      </aside>
-   
+      <div className="sidebar">
+        <NavLink to="/dashboard" activeClassName="active">
+          <span>
+            <MdHomeFilled />
+          </span>
+          <h3>Home</h3>
+        </NavLink>
+        <NavLink to="/playlists" activeClassName="active">
+          <span>
+            <RiPlayListFill />
+          </span>
+          <h3>Playlist</h3>
+        </NavLink>
+        <a href="">
+          <span>
+            <MdAddBox />
+          </span>
+          <h3>Créer playlist</h3>
+        </a>
+        <Link to="/">
+          <span>
+            <RiLogoutCircleRFill />
+          </span>
+          <h3 className="connect">Se deconnecter</h3>
+        </Link>
+      </div>
+    </aside>
   );
 }

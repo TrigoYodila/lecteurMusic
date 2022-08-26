@@ -34,14 +34,14 @@ export default function ProfileTop() {
 
   return (
     <div className="top">
-      <div className="theme-toggler">
+      {/* <div className="theme-toggler">
         <span className="active">
           <MdLightMode />
         </span>
         <span>
           <MdDarkMode />
         </span>
-      </div>
+      </div> */}
       <div className="profile">
         <div className="info">
           <p>{user.name}</p>

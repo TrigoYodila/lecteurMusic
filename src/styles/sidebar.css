@@ -32,25 +32,17 @@ aside {
   padding-top: 1rem;
 } */
 
+
 aside .top {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* margin-bottom: 2.8rem; */
-  margin-top: 1.4rem; /* Ajout */
-}
-
-aside .logo {
-  display: flex;
-  gap: 0.8rem;
-  /* align-items: flex-end; */ /*retire */
+  align-items: flex-end;
+  margin-top: 1.5rem;
 }
 
 .logo-text {
   font-size: 2.2rem;
   font-weight: bold;
   color: var(--color-texte);
-  margin-left: -0.7rem;
 }
 
 aside .logo img {
@@ -68,7 +60,7 @@ aside .sidebar {
   flex-direction: column;
   height: 86vh;
   position: relative;
-  top: 2rem;
+  top: 6rem;
 }
 
 aside h3 {
@@ -108,8 +100,8 @@ aside .sidebar a:last-child {
   background:var(--secondary-color);
   border-radius: 1rem;
   padding: .5rem;
-  bottom: 5rem;
-  width: 90%;
+  bottom: 9rem;
+  width: 98%;
 }
 aside .sidebar a:last-child:hover{
   background:var(--color-primary);

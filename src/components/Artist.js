@@ -38,7 +38,7 @@ export default function Artist() {
         {artist.map((item) => {
           return (
             <div className="update" onClick={() => handleclikartiste(item)}>
-              <div className="profile-photo">
+              <div className="profile-photo-artist">
                 <img src={item.images[0].url} />
               </div>
               <div className="message">

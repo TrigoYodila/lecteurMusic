@@ -1,14 +1,15 @@
 :root {
-  --color-primary: #f4f5fe;
+  --color-primary: #181A1E;
   --color-white: #fff;
-  --color-text: #15111e;
+  --color-text: #EDEFFD;
+  --color-texte:#EDEFFD;
+  --color-card:#363949;
   --color-light: rgba(132, 139, 200, 0.1);
   --secondary-color: #ff7956;
   --color-grise: #d9d9d9;
   --box-shadow: 0 2rem 3rem var(--color-light);
   --box-shadow-base: 4px 4px 50px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  --color-background: ;
+ 
 }
 
 .right .top {
@@ -16,6 +17,7 @@
   justify-content: end;
   align-items: center;
   gap: 1rem;
+  margin-top: .8rem;
 }
 
 .top .theme-toggler {
@@ -48,12 +50,22 @@
   gap: 0.8rem;
   align-items: center;
   text-align: right;
+  background: var(--color-card);
+  padding-left:.5rem;
+  border-radius: 1rem;
+  border: .1rem solid var(--secondary-color);
 }
 
 .info p {
   font-size: 1rem;
   font-weight: 400;
+  color: var(--color-texte);
 }
+
 .profile-photo {
-  cursor: pointer;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
 }
+

@@ -78,12 +78,14 @@ export default function Recents() {
           return (
             <div className="recent-item">
               <img src={item.track.album.images[0].url} />
-              <div className="track-name-title">
-                <div className="title-track">{item.track.name}</div>
-                <div className="name-track">{item.track.artists[0].name}</div>
-              </div>
-              <div className="play" onClick={() => setTrackuri(item.track.uri)}>
-                <div className="arrow-right"></div>
+              <div className="item-info">
+                <div className="track-name-title">
+                  <div className="title-track">{item.track.name}</div>
+                  <div className="name-track">{item.track.artists[0].name}</div>
+                </div>
+                <div className="play" onClick={() => setTrackuri(item.track.uri)}>
+                  <div className="arrow-right"></div>
+                </div>
               </div>
             </div>
           );
