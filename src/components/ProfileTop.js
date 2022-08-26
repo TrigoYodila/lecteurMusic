@@ -3,8 +3,6 @@ import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import { globalData } from "./userContext";
-import { FaUser } from "react-icons/fa";
-
 
 const spotify = new SpotifyWebApi();
 
@@ -20,7 +18,6 @@ export default function ProfileTop() {
       spotify
         .getMe()
         .then((data) => {
-          // console.log(data);
           setUser({
             name: data.display_name,
             email: data.email,

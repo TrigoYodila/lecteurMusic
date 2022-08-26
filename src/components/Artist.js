@@ -25,7 +25,7 @@ export default function Artist() {
         console.error(err);
       })
     }, 1000);
-  }, []);
+  }, [token]);
 
   function handleclikartiste(item){
     setArtistid(item.id)

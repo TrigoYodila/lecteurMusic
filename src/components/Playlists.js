@@ -50,7 +50,7 @@ export default function Playlists() {
           console.log(error);
         });
     }, 1000);
-  }, []);
+  }, [token]);
 
   return (
     <div>

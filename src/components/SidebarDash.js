@@ -20,8 +20,8 @@ export default function SidebarDash() {
 
 
   return (
-    <div className="slide-group">
-      <aside>
+    // <div className="slide-group"> </div>
+      <aside className="sidebar">
         <div className="top">
           <div className="logo">
             <img src="./images/Head phone.png" />
@@ -58,6 +58,6 @@ export default function SidebarDash() {
           </Link>
         </div>
       </aside>
-    </div>
+   
   );
 }

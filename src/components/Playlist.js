@@ -32,7 +32,7 @@ export default function Playlist({
           console.log(err);
         });
   
-  }, []);
+  }, [token]);
   //gérer changement icone play
 
   function handleClicked(item) {

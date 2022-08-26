@@ -32,12 +32,13 @@ body {
   /* height: 100vh; */
   font-family: "Inria Sans", sans-serif;
   font-size: 62.5%;
-  background: #f4f5fe;
-  color:#15111e;
+  background: #181A1E;
   user-select: none;
   overflow-x: hidden;
   overflow-y: hidden;
   line-height: 1;
+  /* width: 100vh;
+  height: 100vh; */
 }
 
 header {

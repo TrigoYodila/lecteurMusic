@@ -26,7 +26,7 @@ export default function TrackPlaylist({ playlistid,playlist,playlistname,playlis
         .catch((err) => {
           console.error(err);
         });
-  }, [playlistid]);
+  }, [playlistid,token]);
   console.log("PlaylistName",playlistname)
   console.log("MON IMAGE",playlistimg)
 

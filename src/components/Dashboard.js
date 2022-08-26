@@ -32,7 +32,7 @@ export default function Dashboard() {
           console.log(error);
         });
     }, 1000);
-  }, []);
+  }, [token]);
   
   return (
     <div>
@@ -48,9 +48,7 @@ export default function Dashboard() {
           }}
         >
           <SidebarDash />
-          <div className="container-home">
             <MainDash />
-          </div>
           <ProfileDash />
         </DashContext.Provider>
       </div>

@@ -1,16 +1,13 @@
 import { useState, useEffect, useContext } from "react";
-// import "../styles/artist.css";
 import "../styles/recents.css";
 import SpotifyWebApi from "spotify-web-api-js";
 import { globalData } from "./userContext";
-import { DashContext } from "./DashboardUseContext";
 
 
 const spotify = new SpotifyWebApi();
 
 export default function TopArtist({artistid}) {
   const { token } = useContext(globalData);
-  // const {artistid} = useContext(DashContext);
   spotify.setAccessToken(token);
 
   const [artist, setArtist] = useState([]);
@@ -19,14 +16,12 @@ export default function TopArtist({artistid}) {
 
   useEffect(() => {
       spotify.getArtistAlbums(artistid).then((data)=>{
-        console.log("Album Artist", data);
-          console.log("TATAT")
           setArtist(data.items);
       }).catch((err)=>{
         console.error(err)
       })
   
-  }, [artistid]);
+  }, [artistid,token]);
 
   return (
     <div>

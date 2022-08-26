@@ -38,7 +38,7 @@ export default function PageArtiste() {
           console.log(error);
         });
     }, 1000);
-  }, []);
+  }, [token]);
 
   return (
     <div>
