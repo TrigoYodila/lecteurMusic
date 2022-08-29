@@ -19,8 +19,8 @@ export default function Recents() {
   const [recents, setRecents] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [isloading, setIsLoading] = useState(true);
- 
-  const { trackuri, setTrackuri} = useContext(DashContext);
+
+  const { trackuri, setTrackuri, play, setPlay } = useContext(DashContext);
 
   spotify.setAccessToken(token);
 
@@ -63,6 +63,12 @@ export default function Recents() {
     setIsLoading(true);
   }
 
+  function playIsClicked(item) {
+    setTrackuri(item.track.uri);
+    setPlay(true);
+    console.log("BONJOUR");
+  }
+
   return (
     <div style={style} className="container-recents">
       <div className="title-card">
@@ -90,7 +96,10 @@ export default function Recents() {
                   </div>
                   <div
                     className="play"
-                    onClick={() => setTrackuri(item.track.uri)}
+                    onClick={() => {
+                      setTrackuri(item.track.uri);
+                      setPlay(true);
+                    }}
                   >
                     <div className="arrow-right"></div>
                   </div>

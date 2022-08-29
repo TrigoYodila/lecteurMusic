@@ -13,7 +13,9 @@ export default function AppRouter() {
         <Route exec path="/" element={<Home />} />
         <Route exec path="dashboard" element={<Dashboard />} />
         <Route exec path="pageartiste" element={<PageArtiste />} />
+        <Route exec path="pageartiste/:id" element={<PageArtiste />} />
         <Route exec path="playlists" element={<Playlists />} />
+
       </Routes>
     </div>
   );

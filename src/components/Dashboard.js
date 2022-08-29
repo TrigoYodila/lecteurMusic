@@ -11,13 +11,14 @@ import SpotifyPlayer from "react-spotify-web-playback";
 export default function Dashboard() {
   const spotify = new SpotifyWebApi();
   const { token } = useContext(globalData);
-  
-  const [trackuri,setTrackuri] = useState("");
-  const [userid,setUserId] = useState("");
-  const [artistid,setArtistid] = useState("");
+
+  const [trackuri, setTrackuri] = useState("");
+  const [userid, setUserId] = useState("");
+  const [artistid, setArtistid] = useState("");
+  const [play, setPlay] = useState(false);
 
   console.log("Artiste id", artistid);
-  
+
   spotify.setAccessToken(token);
 
   useEffect(() => {
@@ -33,7 +34,8 @@ export default function Dashboard() {
         });
     }, 1000);
   }, [token]);
-  
+
+  console.log("MON URI", trackuri)
   return (
     <div>
       <div className="container">
@@ -45,6 +47,8 @@ export default function Dashboard() {
             setUserId,
             setArtistid,
             artistid,
+            play,
+            setPlay,
           }}
         >
           <SidebarDash />
@@ -64,10 +68,14 @@ export default function Dashboard() {
             trackNameColor: "#fff",
           }}
           token={token}
-          uris={trackuri}
+          uris={[trackuri] ? [trackuri] : []}
+          play={play}
+          callback={(state) => {
+            if (!state.isPlaying) setPlay(false);
+            if (state.isPlaying) setPlay(true);
+          }}
         />
       </div>
     </div>
   );
 }
-

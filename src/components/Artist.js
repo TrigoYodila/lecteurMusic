@@ -32,7 +32,7 @@ export default function Artist({ isclicked }) {
 
   function handleclikartiste(item) {
     setArtistid(item.id);
-    navigate("/pageartiste", { replace: true });
+    navigate(`/pageartiste/${item.id}`, { replace: true });
   }
   return (
     <div className="recent-updates">

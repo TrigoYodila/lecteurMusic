@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import "../styles/recents.css";
 import SpotifyWebApi from "spotify-web-api-js";
 import { globalData } from "./userContext";
+import { useParams } from "react-router-dom";
 
 const spotify = new SpotifyWebApi();
 
@@ -10,20 +11,19 @@ export default function TopArtist({ artistid, setAlbumData,setIsClicked,isclicke
   spotify.setAccessToken(token);
 
   const [artist, setArtist] = useState([]);
+  const {id} = useParams();
 
-  console.log("My Artist", artistid);
 
   useEffect(() => {
     spotify
-      .getArtistAlbums(artistid)
+      .getArtistAlbums(id)
       .then((data) => {
         setArtist(data.items);
-        console.log("ALBUM ", artist);
       })
       .catch((err) => {
         console.error(err);
       });
-  }, [artistid, token]);
+  }, [id, token]);
 
   function getAlbumId(item) {
     setAlbumData({

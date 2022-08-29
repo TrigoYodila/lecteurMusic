@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import SpotifyWebApi from "spotify-web-api-js";
 import { globalData } from "./userContext";
 import { DashContext } from "./DashboardUseContext";
@@ -32,6 +33,7 @@ export default function PageArtiste() {
 
   // console.log("ALBUM", albumdata);
   // console.log("CLICKED", isclicked);
+  const {id} = useParams();
 
   console.log("Track uri", trackuri);
 
@@ -99,6 +101,7 @@ export default function PageArtiste() {
           }}
           token={token}
           uris={trackuri}
+          autoPlay = {true}
         />
       </div>
     </div>
