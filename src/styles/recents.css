@@ -161,3 +161,12 @@
 .item-album:hover .titre-album{
   color: var(--secondary-color);
 }
+
+
+/* ======== MEDIA QUERY ========= */
+
+@media screen and (max-width:1200px){
+  .container{
+    
+  }
+}

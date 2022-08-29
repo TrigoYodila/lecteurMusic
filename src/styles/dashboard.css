@@ -29,3 +29,11 @@ h2 {
   left: 0;
   width: 100%;
 }
+
+
+@media screen and (max-width:1200px){
+  .container{
+    width: 94%;
+    grid-template-columns: 7rem auto 20rem;
+  }
+}
