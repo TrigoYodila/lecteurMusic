@@ -28,6 +28,7 @@
 .nav .menu-nav__item {
   transform: translateX(100vw);
   transition: all 0.5s ease-in-out;
+  border-radius: 1rem;
 }
 .nav .menu-nav__item.open {
   transform: translateX(0);
@@ -35,6 +36,7 @@
 .nav .menu-nav__item.active > a {
   color: white;
   background: #ff7956;
+  border: .2rem solid #ff7956;
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -48,8 +50,9 @@
   transition: all 0.5s ease-in-out;
 }
 .nav .menu-nav__link:hover {
-  color: #15111e !important;
-  background: white !important;
+  color: #ff7956 !important;
+  background: #15111e !important;
+  border: .2rem solid #ff7956;
 }
 
 .menu-nav__item {

@@ -21,7 +21,6 @@ export default function Artist({ isclicked }) {
       spotify
         .getMyTopArtists()
         .then((data) => {
-          console.log("RELEASE", data);
           setArtist(data.items);
         })
         .catch((err) => {

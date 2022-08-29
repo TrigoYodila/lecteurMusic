@@ -30,9 +30,8 @@ export default function PageArtiste() {
     artist:"",
     titre:""
   });
+const [play, setPlay] = useState(false);
 
-  // console.log("ALBUM", albumdata);
-  // console.log("CLICKED", isclicked);
   const {id} = useParams();
 
   console.log("Track uri", trackuri);
@@ -67,6 +66,8 @@ export default function PageArtiste() {
             setUserId,
             artistid,
             setArtistid,
+            play,
+            setPlay,
           }}
         >
           <SidebarDash />
@@ -74,16 +75,21 @@ export default function PageArtiste() {
             <DashSearch setChange={setChange} setSearch={setSearch} />
             {change ? (
               <SearchSongs search={search} />
-            ) : isclicked ? (<PlayTrack albumdata={albumdata} isclicked={isclicked} setTrackuri = {setTrackuri} trackuri = {trackuri}/>):(
+            ) : isclicked ? (
+              <PlayTrack
+                albumdata={albumdata}
+                isclicked={isclicked}
+                setTrackuri={setTrackuri}
+                trackuri={trackuri}
+              />
+            ) : (
               <TopArtist
                 artistid={artistid}
                 setAlbumData={setAlbumData}
                 isclicked={isclicked}
                 setIsClicked={setIsClicked}
               />
-            ) 
-             
-            }
+            )}
           </div>
           <ProfileDash />
         </DashContext.Provider>
@@ -100,8 +106,12 @@ export default function PageArtiste() {
             trackNameColor: "#fff",
           }}
           token={token}
-          uris={trackuri}
-          autoPlay = {true}
+          uris={[trackuri] ? [trackuri] : []}
+          play={play}
+          callback={(state) => {
+            if (!state.isPlaying) setPlay(false);
+            if (state.isPlaying) setPlay(true);
+          }}
         />
       </div>
     </div>
