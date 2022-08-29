@@ -3,6 +3,8 @@ import "../styles/recents.css";
 import { globalData } from "./userContext";
 import SpotifyWebApi from "spotify-web-api-js";
 import { DashContext } from "./DashboardUseContext";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const spotify = new SpotifyWebApi();
 
@@ -11,6 +13,8 @@ export default function NewsReleases() {
 
   const [releases, setReleases] = useState([]);
   const [clicked, setClicked] = useState(true);
+  const [isloading, setIsLoading] = useState(true);
+
   const { trackuri, setTrackuri } = useContext(DashContext);
 
   spotify.setAccessToken(token);
@@ -20,8 +24,8 @@ export default function NewsReleases() {
          ? spotify
              .getNewReleases({ limit: 4 })
              .then((data) => {
-               //  console.log("RELEASE", data.albums.items[0].name);
                setReleases(data.albums.items);
+               setIsLoading(false);
              })
              .catch((err) => {
                console.error(err);
@@ -29,17 +33,17 @@ export default function NewsReleases() {
          : spotify
              .getNewReleases()
              .then((data) => {
-               //  console.log("RELEASE", data.albums.items[0].name);
                setReleases(data.albums.items);
+               setIsLoading(false);
              })
              .catch((err) => {
                console.error(err);
              }); 
    }, [clicked,token]);
-  //  console.log("new releases", releases)
 
    function handleClicked() {
      setClicked(!clicked);
+     setIsLoading(true);
    }
 
   return (
@@ -51,7 +55,12 @@ export default function NewsReleases() {
         </span>
       </div>
       <div className="recents-card">
-        {releases.map((item) => {
+        {
+        isloading ? (
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress color="error" />
+          </Box>
+        ) : (releases.map((item) => {
           // console.log("recents dans la fonction", recents)
           return (
             <div className="recent-item">
@@ -65,7 +74,7 @@ export default function NewsReleases() {
               </div>
             </div>
           );
-        })}
+        }))}
       </div>
     </div>
   );

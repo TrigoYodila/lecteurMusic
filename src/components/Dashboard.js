@@ -48,7 +48,7 @@ export default function Dashboard() {
           }}
         >
           <SidebarDash />
-            <MainDash />
+          <MainDash />
           <ProfileDash />
         </DashContext.Provider>
       </div>

@@ -8,38 +8,42 @@ import "../styles/trackplaylist.css";
 
 const spotify = new SpotifyWebApi();
 
-export default function TrackPlaylist({ playlistid,playlist,playlistname,playlistimg}) {
+export default function TrackAlbum({
+  playlistid,
+  playlist,
+  playlistname,
+  playlistimg,
+}) {
   const { token } = useContext(globalData);
   const [playlisttrack, setPlaylistTrack] = useState([]);
-  const { userid, setUserid, setPlaylistid,trackplaylisturi,setTrackplaylisturi} = useContext(DashContext);
-
+  const {
+    userid,
+    setUserid,
+    setPlaylistid,
+    trackplaylisturi,
+    setTrackplaylisturi,
+  } = useContext(DashContext);
 
   spotify.setAccessToken(token);
   console.log("PLAYLIST ID", playlistid);
   useEffect(() => {
-      spotify
-        .getPlaylistTracks(playlistid)
-        .then((data) => {
-          console.log("Liste Playlist", data.items);
-          setPlaylistTrack(data.items);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-  }, [playlistid,token]);
-  console.log("PlaylistName",playlistname)
-  console.log("MON IMAGE",playlistimg)
+    spotify
+      .getPlaylistTracks(playlistid)
+      .then((data) => {
+        console.log("Liste Playlist", data.items);
+        setPlaylistTrack(data.items);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [playlistid, token]);
+  console.log("PlaylistName", playlistname);
+  console.log("MON IMAGE", playlistimg);
 
-  function TakedtrackUri(item){
-    setTrackplaylisturi(item.track.uri)
+  function TakedtrackUri(item) {
+    setTrackplaylisturi(item.track.uri);
     console.log("voici mon uri", trackplaylisturi);
   }
-  
-  const millisToMinutesAndSeconds = (millis) => {
-    var minutes = Math.floor(millis / 60000);
-    var seconds = ((millis % 60000) / 1000).toFixed(0);
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-  };
 
   return (
     <div className="container-play-track">
@@ -60,7 +64,6 @@ export default function TrackPlaylist({ playlistid,playlist,playlistname,playlis
             <tr>
               <th className="col">#</th>
               <th className="col">Titre</th>
-              <th>Durée</th>
               <th>Artiste</th>
               <th className="col">Album</th>
             </tr>
@@ -77,7 +80,6 @@ export default function TrackPlaylist({ playlistid,playlist,playlistname,playlis
                     />
                     {item.track.name}
                   </td>
-                  <td>{millisToMinutesAndSeconds(item.track.duration_ms)}</td>
                   <td>{item.track.artists[0].name}</td>
                   <td className="col">{item.track.album.name}</td>
                 </tr>

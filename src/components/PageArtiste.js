@@ -10,9 +10,9 @@ import "../styles/dashboard.css";
 import "../styles/pageartiste.css";
 import SpotifyPlayer from "react-spotify-web-playback";
 import TopArtist from "./TopArtist";
+import PlayTrack from "./PlayTrack";
 
 export default function PageArtiste() {
-
   const spotify = new SpotifyWebApi();
   const { token } = useContext(globalData);
 
@@ -21,6 +21,17 @@ export default function PageArtiste() {
   const [artistid, setArtistid] = useState("");
   const [change, setChange] = useState(false);
   const [search, setSearch] = useState([]);
+  const [isclicked, setIsClicked] = useState(false);
+  const [albumdata, setAlbumData] = useState({
+    id: "",
+    name: "",
+    img: "",
+    artist:"",
+    titre:""
+  });
+
+  // console.log("ALBUM", albumdata);
+  // console.log("CLICKED", isclicked);
 
   console.log("Track uri", trackuri);
 
@@ -40,16 +51,37 @@ export default function PageArtiste() {
     }, 1000);
   }, [token]);
 
+  // console.log("ID ALBUM", albumdata.id);
+  // console.log("NAME ALBUM", albumdata.name);
+  // console.log("IMG ALBUM", albumdata.img);
   return (
     <div>
       <div className="container">
         <DashContext.Provider
-          value={{ trackuri, setTrackuri, userid, setUserId,artistid,setArtistid }}
+          value={{
+            trackuri,
+            setTrackuri,
+            userid,
+            setUserId,
+            artistid,
+            setArtistid,
+          }}
         >
           <SidebarDash />
           <div className="container-dash">
             <DashSearch setChange={setChange} setSearch={setSearch} />
-            {change ? <SearchSongs search={search} /> : <TopArtist artistid={artistid}/>}
+            {change ? (
+              <SearchSongs search={search} />
+            ) : isclicked ? (<PlayTrack albumdata={albumdata} isclicked={isclicked} setTrackuri = {setTrackuri} trackuri = {trackuri}/>):(
+              <TopArtist
+                artistid={artistid}
+                setAlbumData={setAlbumData}
+                isclicked={isclicked}
+                setIsClicked={setIsClicked}
+              />
+            ) 
+             
+            }
           </div>
           <ProfileDash />
         </DashContext.Provider>

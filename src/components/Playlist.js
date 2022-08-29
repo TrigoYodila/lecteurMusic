@@ -53,7 +53,7 @@ export default function Playlist({
         {playlist.map((item) => {
           return (
             <div className="recent-item">
-              <img src={item.images[0].url} />
+              <img src={item.images.length === 0 ? "" : item.images[0].url} />
               <div className="track-name-title">
                 <div className="name-track" style={{ marginBottom: "0.5rem" }}>
                   {item.name === undefined ? "ICI" : item.name}

@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const spotify = new SpotifyWebApi();
 
-export default function Artist() {
+export default function Artist({ isclicked }) {
   const { token } = useContext(globalData);
   const { artistid, setArtistid } = useContext(DashContext);
   const navigate = useNavigate();
@@ -18,17 +18,20 @@ export default function Artist() {
 
   useEffect(() => {
     setTimeout(() => {
-      spotify.getMyTopArtists().then((data)=>{
-        console.log("RELEASE", data);
+      spotify
+        .getMyTopArtists()
+        .then((data) => {
+          console.log("RELEASE", data);
           setArtist(data.items);
-      }).catch((err)=>{
-        console.error(err);
-      })
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     }, 1000);
   }, [token]);
 
-  function handleclikartiste(item){
-    setArtistid(item.id)
+  function handleclikartiste(item) {
+    setArtistid(item.id);
     navigate("/pageartiste", { replace: true });
   }
   return (

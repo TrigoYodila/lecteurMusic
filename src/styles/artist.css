@@ -45,4 +45,10 @@
   color: var(--color-texte);
   font-weight: 600;
   font-size: 1rem;
+  cursor: pointer;
+}
+
+.message p:hover{
+  color: var(--secondary-color);
+  text-decoration: underline;
 }

@@ -19,7 +19,8 @@ export default function Recents() {
   const [recents, setRecents] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [isloading, setIsLoading] = useState(true);
-  const { trackuri, setTrackuri } = useContext(DashContext);
+ 
+  const { trackuri, setTrackuri} = useContext(DashContext);
 
   spotify.setAccessToken(token);
 
