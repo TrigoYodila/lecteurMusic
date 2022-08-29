@@ -35,7 +35,6 @@ export default function Dashboard() {
     }, 1000);
   }, [token]);
 
-  console.log("MON URI", trackuri)
   return (
     <div>
       <div className="container">

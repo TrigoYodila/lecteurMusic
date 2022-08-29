@@ -25,7 +25,7 @@ export default function TrackAlbum({
   } = useContext(DashContext);
 
   spotify.setAccessToken(token);
-  console.log("PLAYLIST ID", playlistid);
+  
   useEffect(() => {
     spotify
       .getPlaylistTracks(playlistid)
@@ -37,8 +37,6 @@ export default function TrackAlbum({
         console.error(err);
       });
   }, [playlistid, token]);
-  console.log("PlaylistName", playlistname);
-  console.log("MON IMAGE", playlistimg);
 
   function TakedtrackUri(item) {
     setTrackplaylisturi(item.track.uri);

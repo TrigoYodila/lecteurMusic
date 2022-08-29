@@ -47,7 +47,6 @@ export default function Recents() {
             setRecents(data.items);
             setIsLoading(false);
             console.log("Artist albums", data.items[0].track.artists[0].name);
-            // console.log("Data", data);
             console.log("Artist albums", data.items[0].track.name);
             console.log("url image ", data.items[0].track.album.images[0].url);
           })

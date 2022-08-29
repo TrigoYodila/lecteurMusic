@@ -17,10 +17,15 @@ export default function SidebarDash() {
     navigate("pageartiste", { replace: true })
   };
 
+  function logout(){
+    setToken("")
+    window.localStorage.removeItem("token")
+    console.log("bonjour")
+  }
 
 
   return (
-    // <div className="slide-group"> </div>
+   
     <aside className="sidebar">
       <div className="top">
         <div className="logo">
@@ -52,7 +57,7 @@ export default function SidebarDash() {
           </span>
           <h3>Créer playlist</h3>
         </a>
-        <Link to="/">
+        <Link to="/" onClick={logout}>
           <span>
             <RiLogoutCircleRFill />
           </span>

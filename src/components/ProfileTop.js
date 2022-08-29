@@ -1,5 +1,4 @@
 import "../styles/profiletop.css";
-import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import { globalData } from "./userContext";
@@ -30,18 +29,8 @@ export default function ProfileTop() {
    
   }, [token]);
 
-  console.log(user);
-
   return (
     <div className="top">
-      {/* <div className="theme-toggler">
-        <span className="active">
-          <MdLightMode />
-        </span>
-        <span>
-          <MdDarkMode />
-        </span>
-      </div> */}
       <div className="profile">
         <div className="info">
           <p>{user.name}</p>

@@ -8,7 +8,6 @@ export default function Playlists({ albumdata, isclicked, setIsClicked,trackuri,
   const spotify = new SpotifyWebApi();
   const { token } = useContext(globalData);
 
-  const [clickedplay, setClickedplay] = useState(true);
   const [playlist, setPlaylist] = useState([]);
   const [albumtrack, setAlbumTracks] = useState([]);
 
