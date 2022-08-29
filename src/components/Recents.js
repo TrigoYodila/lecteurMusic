@@ -17,7 +17,7 @@ export default function Recents() {
   const { token } = useContext(globalData);
 
   const [recents, setRecents] = useState([]);
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(true);
   const [isloading, setIsLoading] = useState(true);
 
   const { trackuri, setTrackuri, play, setPlay } = useContext(DashContext);
@@ -25,7 +25,7 @@ export default function Recents() {
   spotify.setAccessToken(token);
 
   useEffect(() => {
-    !clicked
+    clicked
       ? spotify
           .getMyRecentlyPlayedTracks({ limit: 4 })
           .then((data) => {
