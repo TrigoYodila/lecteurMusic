@@ -20,30 +20,6 @@
   margin-top: .8rem;
 }
 
-.top .theme-toggler {
-  background: var(--color-grise);
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  height: 2.2rem;
-  width: 5rem;
-  cursor: pointer;
-  border-radius: 0.5rem;
-}
-
-.right .theme-toggler span {
-  font-size: 1.5rem;
-}
-
-.right .theme-toggler span.active {
-  background: var(--secondary-color);
-  color: white;
-  border-radius: 0.5rem;
-  width: 50%;
-  text-align: center;
-  height: 2.2rem;
-}
 
 .right .top .profile {
   display: flex;
@@ -69,3 +45,31 @@
   overflow: hidden;
 }
 
+/* ===== MEDIA QUERY === */
+
+@media screen and (max-width:1200px){
+  
+
+}
+
+@media screen and (max-width:992px){
+ .profile-photo {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.info p{
+  font-size: .8rem;
+}
+}
+
+@media screen and (max-width:768px){
+  .profile-photo {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+}
+
+@media screen and (max-width:576px){
+  
+}

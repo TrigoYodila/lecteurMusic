@@ -47,14 +47,11 @@
 }
 
 .recent-item {
-  /* width: 14rem; */ /*Retité */
   background: var(--color-card);
   padding: 1.5rem;
   border-radius: 1rem;
   position: relative;
   box-shadow: var(--box-shadow-base);
-
-  /* transition: all 300ms ease; */
 }
 
 .item-info {
@@ -63,9 +60,6 @@
 }
 
 .recent-item:hover {
-  /* background:var(--color-text);
-  box-shadow:none;
-  color: white !important; */
   transition: all 1s ease-in-out;
   background: var(--color-primary);
   color: var(--secondary-color);
@@ -166,7 +160,33 @@
 /* ======== MEDIA QUERY ========= */
 
 @media screen and (max-width:1200px){
-  .container{
-    
+  .recents-card {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+@media screen and (max-width:992px){
+  .recents-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title{
+    font-size: 1.3rem;
+  }
+  .voir-plus {
+    font-size: .98rem;
+  }
+}
+
+@media screen and (max-width:768px){
+  .recents-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width:576px){
+  .recents-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
