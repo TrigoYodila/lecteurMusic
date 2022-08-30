@@ -12,7 +12,7 @@ import { DashContext } from "./DashboardUseContext";
 export default function SidebarDash() {
   let navigate = useNavigate();
   const { token, setToken } = useContext(globalData);
-  const {display} = useContext(DashContext);
+  const {display,setDisplay} = useContext(DashContext);
 
   const handleChange = (e) => {
     navigate("pageartiste", { replace: true });
@@ -21,7 +21,6 @@ export default function SidebarDash() {
   function logout() {
     setToken("");
     window.localStorage.removeItem("token");
-    console.log("bonjour");
   }
 
   return (
@@ -35,7 +34,7 @@ export default function SidebarDash() {
             &beta;<span className="danger">Music</span>
           </h2>
         </div>
-        <div className="close">
+        <div className="close" onClick={()=>setDisplay(!display)}>
           <span><MdOutlineClose /></span>
         </div>
       </div>
