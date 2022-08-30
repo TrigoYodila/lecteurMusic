@@ -3,3 +3,22 @@
   margin-top: 1.4rem;
   color: #15111e;
 }
+
+
+@media screen and (max-width:1200px){
+  
+}
+
+@media screen and (max-width:992px){
+ 
+}
+@media screen and (max-width:768px){
+  .right {
+    width: 94%;
+    margin: 0 auto 4rem;
+  }
+}
+
+@media screen and (max-width:576px){
+  
+}

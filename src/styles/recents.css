@@ -3,7 +3,7 @@
   --color-white: #fff;
   --color-text: #edeffd;
   --color-texte: #edeffd;
-  --color-card: #363949;
+  --color-card: #202528;
   --color-light: rgba(132, 139, 200, 0.1);
   --secondary-color: #ff7956;
   --color-grise: #d9d9d9;
@@ -47,7 +47,7 @@
 }
 
 .recent-item {
-  background: var(--color-card);
+  background: #202528;
   padding: 1.5rem;
   border-radius: 1rem;
   position: relative;
@@ -160,33 +160,29 @@
 /* ======== MEDIA QUERY ========= */
 
 @media screen and (max-width:1200px){
-  .recents-card {
-    grid-template-columns: 1fr 1fr 1fr;
+  .recents-card{
+    grid-template-columns: 1fr 1fr;
+    gap: .8;
+  }
+  .title-card .title{
+    font-size: 1.7rem;
+  }
+  .title-card .voir-plus{
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width:992px){
-  .recents-card {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .title{
-    font-size: 1.3rem;
-  }
   .voir-plus {
-    font-size: .98rem;
+    margin-right: 0;
   }
 }
-
 @media screen and (max-width:768px){
-  .recents-card {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  
+ 
 }
 
 @media screen and (max-width:576px){
-  .recents-card {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  
 }
 

@@ -35,7 +35,7 @@ body {
   background: #181A1E;
   user-select: none;
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   line-height: 1;
   /* width: 100vh;
   height: 100vh; */

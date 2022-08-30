@@ -55,3 +55,24 @@ input {
   font-size: 1.8rem;
   font-weight: bold;
 }
+
+
+/* ======== MEDIA QUERY ========= */
+
+@media screen and (max-width:1200px){
+ 
+}
+
+@media screen and (max-width:992px){
+  .input{
+     width: 90%;
+  }
+}
+@media screen and (max-width:768px){
+  
+}
+
+@media screen and (max-width:576px){
+  
+}
+

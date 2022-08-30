@@ -1,27 +1,25 @@
 :root {
-  --color-primary: #181A1E;
+  --color-primary: #181a1e;
   --color-white: #fff;
-  --color-text: #EDEFFD;
-  --color-texte:#EDEFFD;
-  --color-card:#363949;
-  --color-light: rgba(132, 139, 200, 0.1);
+  --color-text: #edeffd;
+  --color-texte: #edeffd;
+  --color-card: #202528;
+  --color-light: rgba(0, 0, 0, 0.4);
   --secondary-color: #ff7956;
   --color-grise: #d9d9d9;
   --box-shadow: 0 2rem 3rem var(--color-light);
   --box-shadow-base: 4px 4px 50px 10px rgba(0, 0, 0, 0.1);
- 
 }
-
 
 aside {
   height: 100vh;
 }
 
-
 aside .top {
   display: flex;
   align-items: flex-end;
   margin-top: 1.5rem;
+  position: relative;
 }
 
 .logo-text {
@@ -60,92 +58,145 @@ aside h3 {
 aside .sidebar a {
   display: flex;
   color: var(--color-texte);
-  margin-left: 0.2rem;
-  gap: 1rem;
   align-items: center;
   position: relative;
   height: 3.7rem;
-  /* transition: all 300ms ease; */
 }
-
 
 aside .sidebar a span {
   font-size: 2rem;
   transition: all 300ms ease;
+  margin-right: .5rem;
 }
 
 aside .sidebar a:last-child {
   position: absolute;
-   color: var(--color-white);
-  background:var(--secondary-color);
+  color: var(--color-white);
+  background: var(--secondary-color);
   border-radius: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   bottom: 9rem;
   width: 98%;
 }
-aside .sidebar a:last-child:hover{
-  background:var(--color-primary);
+aside .sidebar a:last-child:hover {
+  background: var(--color-primary);
   color: var(--secondary-color);
-  border: .2rem solid var(--secondary-color);
+  border: 0.2rem solid var(--secondary-color);
 }
 
-.connect{
+.connect {
   font-size: 1rem;
 }
-
 
 aside .sidebar a:hover {
   color: var(--secondary-color);
 }
 
-.active{
-   background: var(--color-card);
-   color: var(--secondary-color)!important;
-   margin-left: 0;
+.active {
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--secondary-color) !important;
 }
 
-.active::before{
-   content: "";
-  width: .7rem;
+.active::before {
+  content: "";
+  width: 0.7rem;
   height: 100%;
-  background:var(--secondary-color);
+  background: var(--secondary-color);
 }
 
+.top .close {
+  position: absolute;
+  right: .2rem;
+  top: 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+.close span{
+  font-size: 2rem;
+  color:#fff;
+}
 /* ===== MEDIA QUERY === */
 
-@media screen and (max-width:1200px){
-  
-
-}
-
-@media screen and (max-width:992px){
-  .recents-card {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  aside .top .logo-text{
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width:768px){
-  .recents-card {
-    grid-template-columns: 1fr 1fr;
-  }
-
-   aside .sidebar h3{
+@media screen and (max-width: 1200px) {
+  .top h2 {
     display: none;
   }
 
-  aside .top{
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+  .sidebar h3 {
+    display: none;
+  }
+
+  .sidebar a:last-child {
+    position: relative;
+    margin-top: 1.8rem;
+  }
+
+  .sidebar a span {
+    margin-left: 2rem;
+  }
+
+  .sidebar a .active {
+    margin-left: 0.7rem;
   }
 }
 
-@media screen and (max-width:576px){
-  .recents-card {
-    grid-template-columns: 1fr 1fr 1fr;
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 768px) {
+
+   aside {
+    position: fixed;
+    left: -100%;
+    background: #202528;
+    width: 18rem;
+    z-index: 1000;
+    height: 100vh;
+    padding-right: 1rem;
+    display: none;
+    animation: showMenu 400ms ease forwards;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4); 
   }
+
+  .sidebar{
+    margin-top: 2rem;
+    padding-left: 1rem;
+  }
+
+  .sidebar a:last-child {
+    width: 90% !important;
+  }
+
+  .display{
+    display: block;
+  }
+  @keyframes showMenu {
+    to {
+      left: 0;
+    }
+  }
+
+  .top h2 {
+    display: inline;
+  }
+
+  aside .sidebar h3 {
+    display: inline;
+  }
+  aside .sidebar a {
+    width: 100%;
+    height: 3.7rem;
+    color: var(--color-texte);
+  }
+
+  .top .close {
+    display: block;
+    cursor: pointer;
+  }
+  .logo-text {
+    color: var(--color-texte)
+  }
+}
+
+@media screen and (max-width: 576px) {
 }

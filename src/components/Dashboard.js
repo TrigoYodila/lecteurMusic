@@ -16,8 +16,9 @@ export default function Dashboard() {
   const [userid, setUserId] = useState("");
   const [artistid, setArtistid] = useState("");
   const [play, setPlay] = useState(false);
+  const [display, setDisplay] = useState(false);
 
-  console.log("Artiste id", artistid);
+  console.log("display clicked", display);
 
   spotify.setAccessToken(token);
 
@@ -48,6 +49,8 @@ export default function Dashboard() {
             artistid,
             play,
             setPlay,
+            display,
+            setDisplay,
           }}
         >
           <SidebarDash />

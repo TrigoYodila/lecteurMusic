@@ -52,3 +52,30 @@
   color: var(--secondary-color);
   text-decoration: underline;
 }
+
+@media screen and (max-width:1200px){
+  
+}
+
+@media screen and (max-width:992px){
+
+  .recent-updates {
+    padding-left: 1rem;
+  }
+
+ .recent-updates h2{
+  font-size: 1.2rem;
+ }
+ 
+ .profile-photo-artist {
+  width: 3.5rem;
+  height: 3.5rem;
+ }
+}
+@media screen and (max-width:768px){
+  
+}
+
+@media screen and (max-width:576px){
+  
+}

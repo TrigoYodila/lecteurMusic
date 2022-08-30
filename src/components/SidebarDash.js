@@ -1,32 +1,31 @@
 import "../styles/sidebar.css";
 import { MdHomeFilled, MdAlbum, MdAddBox } from "react-icons/md";
 import { RiPlayListFill } from "react-icons/ri";
-import { IoMdHeart } from "react-icons/io";
-import { BsPersonFill } from "react-icons/bs";
-import {RiLogoutCircleRFill} from 'react-icons/ri'
+import { RiLogoutCircleRFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { globalData } from "./userContext";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { MdOutlineClose } from "react-icons/md";
+import { DashContext } from "./DashboardUseContext";
 
 export default function SidebarDash() {
   let navigate = useNavigate();
-  const { token, setToken} = useContext(globalData);
+  const { token, setToken } = useContext(globalData);
+  const {display} = useContext(DashContext);
 
   const handleChange = (e) => {
-    navigate("pageartiste", { replace: true })
+    navigate("pageartiste", { replace: true });
   };
 
-  function logout(){
-    setToken("")
-    window.localStorage.removeItem("token")
-    console.log("bonjour")
+  function logout() {
+    setToken("");
+    window.localStorage.removeItem("token");
+    console.log("bonjour");
   }
 
-
   return (
-   
-    <aside className="sidebar">
+    <aside className={display ? "display" : "sidebar"}>
       <div className="top">
         <div className="logo">
           <img src="./images/Head phone.png" />
@@ -35,6 +34,9 @@ export default function SidebarDash() {
           <h2 className="logo-text">
             &beta;<span className="danger">Music</span>
           </h2>
+        </div>
+        <div className="close">
+          <span><MdOutlineClose /></span>
         </div>
       </div>
 

@@ -34,30 +34,23 @@ h2 {
 @media screen and (max-width:1200px){
   .container{
     width: 94%;
-    grid-template-columns: 12rem auto 16rem;
+    grid-template-columns: 7rem auto 20rem;
   }
-
-
 }
 
 @media screen and (max-width:992px){
   .container{
-    width: 95%;
-    grid-template-columns: 12rem auto 14rem;
+    width: 96%;
+    grid-template-columns: 7rem auto 18rem;
   }
 }
-
 @media screen and (max-width:768px){
   .container{
-    width: 94%;
-    grid-template-columns: 7rem auto 16rem;
+    width: 100%;
+    grid-template-columns: 1fr;
   }
-
 }
 
 @media screen and (max-width:576px){
-  .container{
-    width: 94%;
-    grid-template-columns: 12rem auto 16rem;
-  }
+  
 }

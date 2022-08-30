@@ -1,10 +1,10 @@
 :root {
-  --color-primary: #181A1E;
+  --color-primary: #181a1e;;
   --color-white: #fff;
   --color-text: #EDEFFD;
   --color-texte:#EDEFFD;
   --color-card:#363949;
-  --color-light: rgba(132, 139, 200, 0.1);
+  --color-light: rgba(0, 0, 0, 0.4);
   --secondary-color: #ff7956;
   --color-grise: #d9d9d9;
   --box-shadow: 0 2rem 3rem var(--color-light);
@@ -20,6 +20,9 @@
   margin-top: .8rem;
 }
 
+.top button {
+  display: none;
+}
 
 .right .top .profile {
   display: flex;
@@ -49,25 +52,48 @@
 
 @media screen and (max-width:1200px){
   
-
 }
 
 @media screen and (max-width:992px){
- .profile-photo {
-  width: 2.2rem;
-  height: 2.2rem;
+ 
 }
-
-.info p{
-  font-size: .8rem;
-}
-}
-
 @media screen and (max-width:768px){
-  .profile-photo {
-  width: 1.8rem;
-  height: 1.8rem;
-}
+  .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 4.6rem;
+    background: #202528;
+    /* box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4); */
+    width: 100%;
+    margin: 0!important;
+    z-index: 3;
+  }
+
+  .top .profile{
+    border: none !important;
+    background: transparent!important;
+    padding: 0 !important;
+  }
+
+  .top .info{
+    display: none;
+  }
+
+  .top button {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    left: 1rem;
+  }
+
+  .top button span {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width:576px){
