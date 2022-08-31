@@ -4,7 +4,6 @@ import "../styles/login.css";
 
 export default function Login({clicked}) {
   const {
-    userAuth,
     scope,
     redirect_uri,
     client_id,
