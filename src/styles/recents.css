@@ -60,7 +60,7 @@
 }
 
 .recent-item:hover {
-  transition: all 1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background: var(--color-primary);
   color: var(--secondary-color);
   border: 0.1rem solid var(--secondary-color);
