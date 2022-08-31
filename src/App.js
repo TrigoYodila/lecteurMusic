@@ -18,16 +18,16 @@ function App() {
     AUTH_ENDPOINT: "https://accounts.spotify.com/authorize",
     RESPONSE_TYPE: "token",
   };
-// console.log("dev",process.env.NODE_ENV);
-let redirect_uri = process.env.REACT_APP_REDIRECT_URI_LOCAL
-let client_id = process.env.REACT_APP_CLIENT_ID_LOCAL;
-let auth_endpoint = process.env.REACT_APP_AUTH_ENDPOINT;
-let response_type = process.env.REACT_APP_RESPONSE_TYPE;
-console.log('trigo',redirect_uri);
-if (process.env.NODE_ENV==="production"){
-  redirect_uri = process.env.REACT_APP_REDIRECT_URI_PROD;
-}
- 
+  // console.log("dev",process.env.NODE_ENV);
+  let redirect_uri = process.env.REACT_APP_REDIRECT_URI_LOCAL;
+  let client_id = process.env.REACT_APP_CLIENT_ID_PROD;
+  let auth_endpoint = process.env.REACT_APP_AUTH_ENDPOINT;
+  let response_type = process.env.REACT_APP_RESPONSE_TYPE;
+  console.log("trigo", redirect_uri);
+  if (process.env.NODE_ENV === "production") {
+    redirect_uri = process.env.REACT_APP_REDIRECT_URI_PROD;
+  }
+
   const scope = [
     "user-read-email",
     "user-read-private",
