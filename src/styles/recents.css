@@ -176,12 +176,7 @@
     margin-right: 0;
   }
 }
-@media screen and (max-width: 800px) {
-  .recents-card {
-    grid-template-columns: 1fr;
-    gap: 0.8;
-  }
-}
+
 @media screen and (max-width: 768px) {
   .title-card .title {
     font-size: 1.5rem;
@@ -197,6 +192,13 @@
     border-radius: 50%;
     margin-left: .7rem;
   }
+ 
+
+  .container-play-track table td {
+    font-size: 1.1rem;
+  }
+
+
 }
 
 @media screen and (max-width:650px){

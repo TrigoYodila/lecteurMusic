@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import { MdOutlineClose } from "react-icons/md";
 import { DashContext } from "./DashboardUseContext";
 
+
 export default function SidebarDash() {
   let navigate = useNavigate();
   const { token, setToken } = useContext(globalData);
@@ -27,7 +28,7 @@ export default function SidebarDash() {
     <aside className={display ? "display" : "sidebar"}>
       <div className="top">
         <div className="logo">
-          <img src="./images/Head phone.png" />
+          <img src="../images/Head phone.png" />
         </div>
         <div>
           <h2 className="logo-text">

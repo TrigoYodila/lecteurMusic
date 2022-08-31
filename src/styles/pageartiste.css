@@ -1,4 +1,32 @@
 .container-dash {
-  overflow: auto;
   padding: 0 0 0 1.5rem;
+}
+
+@media screen and (max-width:1200px){
+  .container{
+    width: 94%;
+    grid-template-columns: 7rem auto 20rem;
+  }
+}
+
+@media screen and (max-width:992px){
+  .container{
+    width: 96%;
+    grid-template-columns: 7rem auto 18rem;
+  }
+}
+@media screen and (max-width:768px){
+  .container{
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .container-dash{
+     margin-top: 8rem;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width:576px){
+  
 }

@@ -31,6 +31,7 @@ export default function PageArtiste() {
     titre:""
   });
 const [play, setPlay] = useState(false);
+const [display, setDisplay] = useState(false);
 
   const {id} = useParams();
 
@@ -52,9 +53,6 @@ const [play, setPlay] = useState(false);
     }, 1000);
   }, [token]);
 
-  // console.log("ID ALBUM", albumdata.id);
-  // console.log("NAME ALBUM", albumdata.name);
-  // console.log("IMG ALBUM", albumdata.img);
   return (
     <div>
       <div className="container">
@@ -68,6 +66,8 @@ const [play, setPlay] = useState(false);
             setArtistid,
             play,
             setPlay,
+            display,
+            setDisplay,
           }}
         >
           <SidebarDash />

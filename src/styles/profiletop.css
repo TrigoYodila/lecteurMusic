@@ -28,9 +28,8 @@
   display: flex;
   gap: 0.8rem;
   align-items: center;
-  text-align: right;
-  background: var(--color-card);
-  padding-left:.5rem;
+  background: #202528;
+  padding:.5rem;
   border-radius: 1rem;
   border: .1rem solid var(--secondary-color);
 }

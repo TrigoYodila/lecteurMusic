@@ -7,8 +7,11 @@ import MainDash from "./MainDash";
 import SidebarDash from "./SidebarDash";
 import "../styles/dashboard.css";
 import SpotifyPlayer from "react-spotify-web-playback";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  
+
   const spotify = new SpotifyWebApi();
   const { token } = useContext(globalData);
 
@@ -23,17 +26,16 @@ export default function Dashboard() {
   spotify.setAccessToken(token);
 
   useEffect(() => {
-    setTimeout(() => {
-      spotify
-        .getMe()
-        .then((data) => {
-          console.log(data);
-          setUserId(data.id);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, 1000);
+    spotify
+      .getMe()
+      .then((data) => {
+        console.log(data);
+        setUserId(data.id);
+      })
+      .catch((error) => {
+        console.log(error);
+      
+      });
   }, [token]);
 
   return (

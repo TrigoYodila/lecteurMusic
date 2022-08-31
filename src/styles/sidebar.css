@@ -40,6 +40,7 @@ aside .logo img {
 /* ==== SIDEBAR ===== */
 aside .sidebar {
   display: flex;
+  gap: 1.5rem;
   flex-direction: column;
   height: 86vh;
   position: relative;
