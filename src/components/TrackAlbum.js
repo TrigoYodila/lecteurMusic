@@ -1,10 +1,10 @@
 import { globalData } from "./userContext";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useContext, useState, useEffect } from "react";
-import "../styles/playlist.css";
 import "../styles/recents.css";
 import { DashContext } from "./DashboardUseContext";
 import "../styles/trackplaylist.css";
+import "../styles/trackalbum.css";
 
 const spotify = new SpotifyWebApi();
 
@@ -25,7 +25,7 @@ export default function TrackAlbum({
   } = useContext(DashContext);
 
   spotify.setAccessToken(token);
-  console.log("PLAYLIST ID", playlistid);
+
   useEffect(() => {
     spotify
       .getPlaylistTracks(playlistid)
@@ -37,8 +37,6 @@ export default function TrackAlbum({
         console.error(err);
       });
   }, [playlistid, token]);
-  console.log("PlaylistName", playlistname);
-  console.log("MON IMAGE", playlistimg);
 
   function TakedtrackUri(item) {
     setTrackplaylisturi(item.track.uri);
@@ -73,13 +71,7 @@ export default function TrackAlbum({
               <tbody>
                 <tr onClick={() => TakedtrackUri(item)}>
                   <th className="col">{index + 1}</th>
-                  <td className="col-image">
-                    <img
-                      src={item.track.album.images[0].url}
-                      className="title-image"
-                    />
-                    {item.track.name}
-                  </td>
+                  <td>{item.track.name}</td>
                   <td>{item.track.artists[0].name}</td>
                   <td className="col">{item.track.album.name}</td>
                 </tr>

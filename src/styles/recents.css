@@ -3,7 +3,7 @@
   --color-white: #fff;
   --color-text: #edeffd;
   --color-texte: #edeffd;
-  --color-card: #363949;
+  --color-card: #202528;
   --color-light: rgba(132, 139, 200, 0.1);
   --secondary-color: #ff7956;
   --color-grise: #d9d9d9;
@@ -47,14 +47,11 @@
 }
 
 .recent-item {
-  /* width: 14rem; */ /*Retité */
-  background: var(--color-card);
+  background: #202528;
   padding: 1.5rem;
   border-radius: 1rem;
   position: relative;
   box-shadow: var(--box-shadow-base);
-
-  /* transition: all 300ms ease; */
 }
 
 .item-info {
@@ -63,10 +60,7 @@
 }
 
 .recent-item:hover {
-  /* background:var(--color-text);
-  box-shadow:none;
-  color: white !important; */
-  transition: all 1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background: var(--color-primary);
   color: var(--secondary-color);
   border: 0.1rem solid var(--secondary-color);
@@ -154,10 +148,79 @@
   color: var(--color-texte);
 }
 
-.item-album{
+.item-album {
   cursor: pointer;
 }
 
-.item-album:hover .titre-album{
+.item-album:hover .titre-album {
   color: var(--secondary-color);
+}
+
+/* ======== MEDIA QUERY ========= */
+
+@media screen and (max-width: 1200px) {
+  .recents-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8;
+  }
+  .title-card .title {
+    font-size: 1.7rem;
+  }
+  .title-card .voir-plus {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .voir-plus {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-card .title {
+    font-size: 1.5rem;
+  }
+
+  .recents-card {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.8;
+  }
+  .recent-item img {
+    width: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: .7rem;
+  }
+ 
+
+  .container-play-track table td {
+    font-size: 1.1rem;
+  }
+
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width: 576px) {
+  .recents-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8;
+  }
+}
+@media screen and (max-width: 376px) {
+  .recents-card {
+    grid-template-columns: 1fr;
+    gap: 0.8;
+  }
+
+  .title-card{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }

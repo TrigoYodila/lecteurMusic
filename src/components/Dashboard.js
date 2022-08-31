@@ -7,8 +7,11 @@ import MainDash from "./MainDash";
 import SidebarDash from "./SidebarDash";
 import "../styles/dashboard.css";
 import SpotifyPlayer from "react-spotify-web-playback";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  
+
   const spotify = new SpotifyWebApi();
   const { token } = useContext(globalData);
 
@@ -16,26 +19,25 @@ export default function Dashboard() {
   const [userid, setUserId] = useState("");
   const [artistid, setArtistid] = useState("");
   const [play, setPlay] = useState(false);
+  const [display, setDisplay] = useState(false);
 
-  console.log("Artiste id", artistid);
+  console.log("display clicked", display);
 
   spotify.setAccessToken(token);
 
   useEffect(() => {
-    setTimeout(() => {
-      spotify
-        .getMe()
-        .then((data) => {
-          console.log(data);
-          setUserId(data.id);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, 1000);
+    spotify
+      .getMe()
+      .then((data) => {
+        console.log(data);
+        setUserId(data.id);
+      })
+      .catch((error) => {
+        console.log(error);
+      
+      });
   }, [token]);
 
-  console.log("MON URI", trackuri)
   return (
     <div>
       <div className="container">
@@ -49,6 +51,8 @@ export default function Dashboard() {
             artistid,
             play,
             setPlay,
+            display,
+            setDisplay,
           }}
         >
           <SidebarDash />

@@ -4,9 +4,13 @@ import Home from "./Home";
 import Dashboard from "./Dashboard";
 import PageArtiste from "./PageArtiste";
 import Playlists from "./Playlists";
-
+import { globalData } from "./userContext";
+import { Navigate } from "react-router-dom";
 
 export default function AppRouter() {
+  const { token } = useContext(globalData);
+  const usertoken = window.localStorage.getItem("token");
+
   return (
     <div>
       <Routes>
@@ -15,7 +19,6 @@ export default function AppRouter() {
         <Route exec path="pageartiste" element={<PageArtiste />} />
         <Route exec path="pageartiste/:id" element={<PageArtiste />} />
         <Route exec path="playlists" element={<Playlists />} />
-
       </Routes>
     </div>
   );

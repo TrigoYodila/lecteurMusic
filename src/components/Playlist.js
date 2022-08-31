@@ -37,12 +37,10 @@ export default function Playlist({
 
   function handleClicked(item) {
     setClickedplay(false);
-    // console.log("BONKOUR")
     setPlaylistid(item.id);
     setPlaylistname(item.name)
     setPlaylistimg(item.images[0].url)
   }
-  // console.log("clicked", clickedplay);
   console.log("Mes playlist", userid.id);
   return (
     <div>

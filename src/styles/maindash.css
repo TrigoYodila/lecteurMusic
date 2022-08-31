@@ -2,3 +2,22 @@
     padding: 0 0 0 2rem;
     overflow: auto;
 }
+
+
+@media screen and (max-width:1200px){
+  
+}
+
+@media screen and (max-width:992px){
+
+}
+@media screen and (max-width:768px){
+  .container-main{
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width:576px){
+  
+}

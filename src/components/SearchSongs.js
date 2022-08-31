@@ -12,7 +12,6 @@ export default function SearchSongs({search}){
       <div>
         <div className="recents-card">
           {search.map((item) => {
-            // console.log("recents dans la fonction", recents)
             return (
               <div className="recent-item">
                 <img src={item.album.images[0].url} />
